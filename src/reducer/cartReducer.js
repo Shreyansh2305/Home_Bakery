@@ -80,7 +80,7 @@ const cartReducer = (state, action) => {
   }
 
   //to get total cart item
-  if (action.type === "CART_TOTAL_ITEM") {
+  if (action.type === "CART_TOTAL_ITEM" && state.cart != null) {
     let updatedItem = state.cart.reduce((initial, item) => {
       let { amount } = item;
       initial = initial + amount;
